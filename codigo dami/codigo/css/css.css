@@ -1,0 +1,135 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f0f8ff; /* Un azul claro que es suave para la vista */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #4CAF50;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.tab-buttons {
+    background-color: #4CAF50;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tab-buttons button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tab-buttons button:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el cursor */
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px; /* Limitar el ancho máximo para mejorar la legibilidad */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.menu-options {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.menu-options img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.menu-options img:hover {
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el cursor */
+}
+
+.button-container, .back-button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.payment-container, .consumo-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.payment-container div, .consumo-container div {
+    margin-bottom: 10px;
+}
+
+.filter-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.big-button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.big-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el cursor */
+}
+
+select, input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: calc(100% - 22px); /* Ajustar el ancho al tamaño del contenedor */
+    max-width: 300px;
+}
+
+button {
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.payment-container select, .payment-container input[type="text"] {
+    margin: 5px 0;
+}
+
+#dias {
+    width: auto; /* Ajustar el ancho para el menú desplegable */
+}

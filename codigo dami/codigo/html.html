@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Menús</title>
+    <link rel="stylesheet" href="css/css.css">
+    <script src="js/clases.js" defer></script>
+    <script src="js/js.js" defer></script>
+</head>
+<body>
+    <div class="tab-buttons">
+        <button onclick="showTab(0)">Inicio</button>
+        <button onclick="showTab(1)">Visualización de Menús</button>
+        <button onclick="showTab(2)">Método de Pago</button>
+        <button onclick="showTab(3)">Consumo</button>
+    </div>
+
+    <div id="tab-0" class="tab-content active">
+        <h1>Bienvenidos!</h1>
+        <button onclick="showTab(1)" class="big-button">Menu</button>
+        <button onclick="showTab(3)" class="big-button">Consumo</button>
+    </div>
+
+    <div id="tab-1" class="tab-content">
+        <h1>Menús</h1>
+        <div class="menu-options">
+            <label for="dias">Días:</label>
+            <select id="dias" name="dias">
+                <option value="lunes">Lunes</option>
+                <option value="martes">Martes</option>
+                <option value="miercoles">Miércoles</option>
+                <option value="jueves">Jueves</option>
+                <option value="viernes">Viernes</option>
+                <option value="sabado">Sábado</option>
+                <option value="domingo">Domingo</option>
+            </select>
+        </div>
+        <div class="menu-options">
+            <h2 id="plato-principal-texto">Plato Principal</h2>
+            <img src="plato_principal.jpg" alt="Plato Principal">
+        </div>
+        <div class="menu-options">
+            <h2 id="acompanamiento-texto">Acompañamiento</h2>
+            <img src="acompanamiento.jpg" alt="Acompañamiento">
+        </div>
+        <div class="menu-options">
+            <h2 id="postre-texto">Postre</h2>
+            <img src="postre.jpg" alt="Postre">
+        </div>
+        <button id="realizar-pedido">Realizar Pedido</button>
+    </div>
+
+    <div id="tab-2" class="tab-content">
+        <h1>Método de Pago</h1>
+        <div class="payment-options">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+            <label for="numero">Número de Tarjeta:</label>
+            <input type="text" id="numero" name="numero">
+            <label for="fecha-vencimiento">Fecha de Vencimiento:</label>
+            <input type="text" id="fecha-vencimiento" name="fecha-vencimiento">
+            <label for="codigo-seguridad">Código de Seguridad:</label>
+            <input type="text" id="codigo-seguridad" name="codigo-seguridad">
+        </div>
+        <button id="pagar">Pagar</button>
+    </div>
+
+    <div id="tab-3" class="tab-content">
+        <h1>Consumo</h1>
+        <div class="filter-options">
+            <label for="filtro">Filtro:</label>
+            <select id="filtro" name="filtro" onchange="filterConsumo()">
+                <option value="semana">Semana</option>
+                <option value="mes">Mes</option>
+            </select>
+        </div>
+        <div id="consumo-semana" class="consumo-content">
+            <!-- Aquí se mostrará el consumo semanal -->
+        </div>
+        <div id="consumo-mes" class="consumo-content" style="display: none;">
+            <!-- Aquí se mostrará el consumo mensual -->
+        </div>
+    </div>
+</body>
+</html>
