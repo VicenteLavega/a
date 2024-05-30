@@ -11,15 +11,12 @@ function showTab(tabIndex) {
 function filterConsumo() {
     var filtro = document.getElementById('filtro').value;
     var semana = document.getElementById('consumo-semana');
-    var mes = document.getElementById('consumo-mes');
+ 
 
     if (filtro === 'semana') {
         semana.style.display = 'block';
         mes.style.display = 'none';
-    } else if (filtro === 'mes') {
-        semana.style.display = 'none';
-        mes.style.display = 'block';
-    }
+    } 
 }
 
 // Menús disponibles por día
@@ -85,6 +82,8 @@ let compras = [];
 function guardarCompra() {
     const selectedDay = document.getElementById('dias').value;
     const menuComprado = menus[selectedDay];
+
+    // Agregar el pedido al array de compras sin modificar los objetos del menú original
     compras.push(new Consumo(selectedDay, menuComprado));
 
     alert("Compra realizada con éxito!");
@@ -95,20 +94,20 @@ function guardarCompra() {
 // Mostrar el consumo
 function mostrarConsumo() {
     const consumoSemana = document.getElementById('consumo-semana');
-    const consumoMes = document.getElementById('consumo-mes');
+
 
     consumoSemana.innerHTML = '';
-    consumoMes.innerHTML = '';
+
 
     const diasSemana = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
-    const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+   
 
     // Mostrar consumo semanal
     diasSemana.forEach(dia => {
         const menuDia = compras.filter(compra => compra.dia === dia);
         const consumo = document.createElement('div');
         if (menuDia.length) {
-            const caloriasTotales = menuDia[0].menu.getCaloriasTotales();
+            const caloriasTotales = menuDia.reduce((total, compra) => total + compra.menu.getCaloriasTotales(), 0);
             consumo.innerText = `${dia.charAt(0).toUpperCase() + dia.slice(1)}: ${caloriasTotales} calorías consumidas`;
         } else {
             consumo.innerText = `${dia.charAt(0).toUpperCase() + dia.slice(1)}: No consumido`;
@@ -116,12 +115,7 @@ function mostrarConsumo() {
         consumoSemana.appendChild(consumo);
     });
 
-    // Mostrar consumo mensual (para simplificar, mostramos los días de la semana también en el mes)
-    meses.forEach(mes => {
-        const consumo = document.createElement('div');
-        consumo.innerText = `${mes}: Consumo detallado en días de la semana`;
-        consumoMes.appendChild(consumo);
-    });
+   
 }
 
 // Event listener para actualizar el menú al cambiar el día
