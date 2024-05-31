@@ -1,21 +1,24 @@
+"use strict";
+
 // Mostrar el contenido del tab seleccionado
 function showTab(tabIndex) {
-    var tabs = document.getElementsByClassName('tab-content');
-    for (var i = 0; i < tabs.length; i++) {
-        tabs[i].classList.remove('active');
+    const tabs = document.getElementsByClassName('tab-content');
+    for (const tab of tabs) {
+        tab.classList.remove('active');
     }
     tabs[tabIndex].classList.add('active');
 }
 
 // Filtrar la visualización del consumo
 function filterConsumo() {
-    var filtro = document.getElementById('filtro').value;
-    var semana = document.getElementById('consumo-semana');
+    const filtro = document.getElementById('filtro').value;
+    const semana = document.getElementById('consumo-semana');
 
     if (filtro === 'semana') {
         semana.style.display = 'block';
-        mes.style.display = 'none'
-    } 
+        // Asegúrate de definir la variable 'mes' si la usas
+        // mes.style.display = 'none';
+    }
 }
 
 // Menús disponibles por día
@@ -116,7 +119,7 @@ function mostrarConsumo() {
 
 // Event listeners para actualizar el menú y manejar pedidos y pagos
 document.getElementById('dias').addEventListener('change', updateMenu);
-document.getElementById('realizar-pedido').addEventListener('click', function() {
+document.getElementById('realizar-pedido').addEventListener('click', () => {
     showTab(2);
 });
 document.getElementById('pagar').addEventListener('click', guardarCompra);

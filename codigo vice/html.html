@@ -5,131 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicación de Menús</title>
     <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="js/clases.js" defer></script>
     <script src="js/js.js" defer></script>
 </head>
 <body>
-    <div class="tab-buttons">
-        <button onclick="showTab(0)">Inicio</button>
-        <button onclick="showTab(1)">Visualización de Menús</button>
-        <button onclick="showTab(2)">Método de Pago</button>
-        <button onclick="showTab(3)">Consumo</button>
-    </div>
-
-    <div id="tab-0" class="tab-content active">
+    <header>
         <h1>Bienvenidos!</h1>
-        <button onclick="showTab(1)" class="big-button">Menu</button>
-        <button onclick="showTab(3)" class="big-button">Consumo</button>
-    </div>
+    </header>
+    <nav>
+        <ul class="tab-buttons">
+            <li><button class="btn btn-primary" onclick="showTab(0)">Inicio</button></li>
+            <li><button class="btn btn-primary" onclick="showTab(1)">Visualización de Menús</button></li>
+            <li><button class="btn btn-primary" onclick="showTab(2)">Método de Pago</button></li>
+            <li><button class="btn btn-primary" onclick="showTab(3)">Consumo</button></li>
+        </ul>
+    </nav>
 
-    <div id="tab-1" class="tab-content">
-        <h1>Menús</h1>
-        <div class="menu-options">
-            <label for="dias">Días:</label>
-            <select id="dias" name="dias">
-                <option value="lunes">Lunes</option>
-                <option value="martes">Martes</option>
-                <option value="miercoles">Miércoles</option>
-                <option value="jueves">Jueves</option>
-                <option value="viernes">Viernes</option>
-                <option value="sabado">Sábado</option>
-                <option value="domingo">Domingo</option>
-            </select>
-        </div>
-        <div class="menu-options">
-            <h2 id="plato-principal-texto">Plato Principal</h2>
-            <img id="plato-principal-imagen" src="" alt="Plato Principal">
-        </div>
-        <div class="menu-options">
-            <h2 id="acompanamiento-texto">Acompañamiento</h2>
-            <img id="acompanamiento-imagen" src="" alt="Acompañamiento">
-        </div>
-        <div class="menu-options">
-            <h2 id="postre-texto">Postre</h2>
-            <img id="postre-imagen" src="" alt="Postre">
-        </div>
-        <div class="button-container">
-            <button id="realizar-pedido">Realizar Pedido</button>
-        </div>
-        <div class="back-button">
-            <button onclick="showTab(0)">Volver</button>
-        </div>
-    </div>
+    <main>
+        <section id="tab-0" class="tab-content active">
+            <h2>Inicio</h2>
+            <button onclick="showTab(1)" class="big-button">Menu</button>
+            <button onclick="showTab(3)" class="big-button">Consumo</button>
+        </section>
 
-    <div id="tab-2" class="tab-content">
-        <h1>Método de Pago</h1>
-        <div class="payment-container">
-            <div>
-                <label for="tarjeta">Selecciona Tarjeta:</label>
-                <select id="tarjeta" name="tarjeta">
-                    <option value="visa">Visa</option>
-                    <option value="mastercard">MasterCard</option>
-                    <option value="amex">American Express</option>
+        <section id="tab-1" class="tab-content">
+            <h2>Menús</h2>
+            <div class="menu-options">
+                <label for="dias">Días:</label>
+                <select id="dias" name="dias">
+                    <option value="lunes">Lunes</option>
+                    <option value="martes">Martes</option>
+                    <option value="miercoles">Miércoles</option>
+                    <option value="jueves">Jueves</option>
+                    <option value="viernes">Viernes</option>
+                    <option value="sabado">Sábado</option>
+                    <option value="domingo">Domingo</option>
                 </select>
             </div>
-            <div>
-                <label for="numero_tarjeta">Número de Tarjeta:</label>
-                <input type="text" id="numero_tarjeta" name="numero_tarjeta">
+            <div class="menu-options">
+                <h3 id="plato-principal-texto">Plato Principal</h3>
+                <img id="plato-principal-imagen" src="" alt="Imagen del plato principal">
             </div>
-            <div>
-                <label for="mes_caducidad">Fecha de Caducidad:</label>
-                <select id="mes_caducidad" name="mes_caducidad">
-                    <option value="1">01</option>
-                    <option value="2">02</option>
-                    <option value="3">03</option>
-                    <option value="4">04</option>
-                    <option value="5">05</option>
-                    <option value="6">06</option>
-                    <option value="7">07</option>
-                    <option value="8">08</option>
-                    <option value="9">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                </select>
-                <select id="ano_caducidad" name="ano_caducidad">
-                    <option value="2024">2024</option>
-                    <option value="2025">2025</option>
-                    <option value="2026">2026</option>
-                    <option value="2027">2027</option>
-                    <option value="2028">2028</option>
-                    <option value="2029">2029</option>
-                    <option value="2030">2030</option>
-                </select>
+            <div class="menu-options">
+                <h3 id="acompanamiento-texto">Acompañamiento</h3>
+                <img id="acompanamiento-imagen" src="" alt="Imagen del acompañamiento">
             </div>
-            <div>
-                <label for="codigo_seguridad">Código de Seguridad:</label>
-                <input type="text" id="codigo_seguridad" name="codigo_seguridad">
+            <div class="menu-options">
+                <h3 id="postre-texto">Postre</h3>
+                <img id="postre-imagen" src="" alt="Imagen del postre">
             </div>
             <div class="button-container">
-                <button id="pagar">Pagar</button>
+                <button id="realizar-pedido">Realizar Pedido</button>
             </div>
-        </div>
-        <div class="back-button">
-            <button onclick="showTab(1)">Volver</button>
-        </div>
-    </div>
+            <div class="back-button">
+                <button onclick="showTab(0)">Volver</button>
+            </div>
+        </section>
 
-    <div id="tab-3" class="tab-content">
-        <h1>Consumo</h1>
-        <div class="filter-container">
-            <label for="filtro">Filtrar por:</label>
-            <select id="filtro" name="filtro" onclick="filterConsumo()">
-                <option value="semana">Semana</option>
-            </select>
-        </div>
-        <div id="consumo-semana" style="display: none;">
-            <div id="consumo-lunes">Lunes: <span>No consumido</span></div>
-            <div id="consumo-martes">Martes: <span>No consumido</span></div>
-            <div id="consumo-miercoles">Miércoles: <span>No consumido</span></div>
-            <div id="consumo-jueves">Jueves: <span>No consumido</span></div>
-            <div id="consumo-viernes">Viernes: <span>No consumido</span></div>
-            <div id="consumo-sabado">Sábado: <span>No consumido</span></div>
-            <div id="consumo-domingo">Domingo: <span>No consumido</span></div>
-        </div>
-        <div class="back-button">
-            <button onclick="showTab(0)">Volver</button>
-        </div>
-    </div>
+        <section id="tab-2" class="tab-content">
+            <h2>Método de Pago</h2>
+            <div class="payment-container">
+                <div>
+                    <label for="tarjeta">Selecciona Tarjeta:</label>
+                    <select id="tarjeta" name="tarjeta">
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">MasterCard</option>
+                        <option value="amex">American Express</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="numero_tarjeta">Número de Tarjeta:</label>
+                    <input type="text" id="numero_tarjeta" name="numero_tarjeta">
+                </div>
+                <div>
+                    <label for="mes_caducidad">Fecha de Caducidad:</label>
+                    <select id="mes_caducidad" name="mes_caducidad">
+                        <option value="1">01</option>
+                        <option value="2">02</option>
+                        <option value="3">03</option>
+                        <option value="4">04</option>
+                        <option value="5">05</option>
+                        <option value="6">06</option>
+                        <option value="7">07</option>
+                        <option value="8">08</option>
+                        <option value="9">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select id="ano_caducidad" name="ano_caducidad">
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="codigo_seguridad">Código de Seguridad:</label>
+                    <input type="text" id="codigo_seguridad" name="codigo_seguridad">
+                </div>
+                <div class="button-container">
+                    <button id="pagar">Pagar</button>
+                </div>
+            </div>
+            <div class="back-button">
+                <button onclick="showTab(1)">Volver</button>
+            </div>
+        </section>
+
+        <section id="tab-3" class="tab-content">
+            <h2>Consumo</h2>
+            <div class="filter-container">
+                <label for="filtro">Filtrar por:</label>
+                <select id="filtro" name="filtro" onclick="filterConsumo()">
+                    <option value="semana">Semana</option>
+                </select>
+            </div>
+            <div id="consumo-semana" style="display: none;">
+                <div id="consumo-lunes">Lunes: <span>No consumido</span></div>
+                <div id="consumo-martes">Martes: <span>No consumido</span></div>
+                <div id="consumo-miercoles">Miércoles: <span>No consumido</span></div>
+                <div id="consumo-jueves">Jueves: <span>No consumido</span></div>
+                <div id="consumo-viernes">Viernes: <span>No consumido</span></div>
+                <div id="consumo-sabado">Sábado: <span>No consumido</span></div>
+                <div id="consumo-domingo">Domingo: <span>No consumido</span></div>
+            </div>
+            <div class="back-button">
+                <button onclick="showTab(0)">Volver</button>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
