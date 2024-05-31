@@ -133,3 +133,9 @@ label {
 #dias {
     width: auto; /* Ajustar el ancho para el menú desplegable */
 }
+
+img {
+    width: 100%;
+    max-width: 600px; /* Ajusta según sea necesario */
+    height: auto;
+}
