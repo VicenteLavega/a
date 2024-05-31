@@ -11,56 +11,55 @@ function showTab(tabIndex) {
 function filterConsumo() {
     var filtro = document.getElementById('filtro').value;
     var semana = document.getElementById('consumo-semana');
- 
 
     if (filtro === 'semana') {
         semana.style.display = 'block';
-        mes.style.display = 'none';
+        mes.style.display = 'none'
     } 
 }
 
 // Menús disponibles por día
 const menus = {
     lunes: new Menu(
-        new PlatoPrincipal("Pollo a la parrilla", 400),
-        new Acompanamiento("Arroz con vegetales", 200),
-        new Postre("Fruta fresca", 100),
+        new PlatoPrincipal("Pollo a la parrilla", 400, 'img/lunes_plato_principal.jpg'),
+        new Acompanamiento("Arroz con vegetales", 200, 'img/lunes_acompanamiento.jpg'),
+        new Postre("Ensalada de frutas", 100, 'img/lunes_postre.jpg'),
         10
     ),
     martes: new Menu(
-        new PlatoPrincipal("Pasta al pesto", 450),
-        new Acompanamiento("Ensalada César", 150),
-        new Postre("Gelatina", 50),
+        new PlatoPrincipal("Pasta al pesto", 450, 'img/martes_plato_principal.jpg'),
+        new Acompanamiento("Ensalada César", 150, 'img/martes_acompanamiento.jpg'),
+        new Postre("Gelatina", 50, 'img/martes_postre.jpg'),
         12
     ),
     miercoles: new Menu(
-        new PlatoPrincipal("Sopa de lentejas", 300),
-        new Acompanamiento("Pan integral", 100),
-        new Postre("Yogur", 150),
+        new PlatoPrincipal("Sopa de lentejas", 300, 'img/miercoles_plato_principal.jpg'),
+        new Acompanamiento("Pan integral", 100, 'img/miercoles_acompanamiento.jpg'),
+        new Postre("Yogur", 150, 'img/miercoles_postre.jpg'),
         8
     ),
     jueves: new Menu(
-        new PlatoPrincipal("Carne asada", 500),
-        new Acompanamiento("Papas fritas", 350),
-        new Postre("Helado", 200),
+        new PlatoPrincipal("Carne asada", 500, 'img/jueves_plato_principal.jpg'),
+        new Acompanamiento("Papas fritas", 350, 'img/jueves_acompanamiento.jpg'),
+        new Postre("Helado", 200, 'img/jueves_postre.jpg'),
         15
     ),
     viernes: new Menu(
-        new PlatoPrincipal("Pescado al horno", 350),
-        new Acompanamiento("Ensalada mixta", 100),
-        new Postre("Tarta de manzana", 300),
+        new PlatoPrincipal("Pescado al horno", 350, 'img/viernes_plato_principal.jpg'),
+        new Acompanamiento("Ensalada mixta", 100, 'img/viernes_acompanamiento.jpg'),
+        new Postre("Tarta de manzana", 300, 'img/viernes_postre.jpg'),
         12
     ),
     sabado: new Menu(
-        new PlatoPrincipal("Pizza", 600),
-        new Acompanamiento("Aros de cebolla", 250),
-        new Postre("Brownie", 400),
+        new PlatoPrincipal("Pizza", 600, 'img/sabado_plato_principal.jpg'),
+        new Acompanamiento("Aros de cebolla", 250, 'img/sabado_acompanamiento.jpg'),
+        new Postre("Brownie", 400, 'img/sabado_postre.jpg'),
         18
     ),
     domingo: new Menu(
-        new PlatoPrincipal("Lasagna", 550),
-        new Acompanamiento("Pan de ajo", 200),
-        new Postre("Cheesecake", 450),
+        new PlatoPrincipal("Lasagna", 550, 'img/domingo_plato_principal.jpg'),
+        new Acompanamiento("Pan de ajo", 200, 'img/domingo_acompanamiento.jpg'),
+        new Postre("Cheesecake", 450, 'img/domingo_postre.jpg'),
         20
     )
 };
@@ -71,8 +70,11 @@ function updateMenu() {
     const menu = menus[selectedDay];
 
     document.getElementById('plato-principal-texto').innerText = menu.platoPrincipal.nombre;
+    document.getElementById('plato-principal-imagen').src = menu.platoPrincipal.imagen;
     document.getElementById('acompanamiento-texto').innerText = menu.acompanamiento.nombre;
+    document.getElementById('acompanamiento-imagen').src = menu.acompanamiento.imagen;
     document.getElementById('postre-texto').innerText = menu.postre.nombre;
+    document.getElementById('postre-imagen').src = menu.postre.imagen;
 }
 
 // Array para guardar los menús comprados
@@ -94,13 +96,9 @@ function guardarCompra() {
 // Mostrar el consumo
 function mostrarConsumo() {
     const consumoSemana = document.getElementById('consumo-semana');
-
-
     consumoSemana.innerHTML = '';
 
-
     const diasSemana = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
-   
 
     // Mostrar consumo semanal
     diasSemana.forEach(dia => {
@@ -114,13 +112,14 @@ function mostrarConsumo() {
         }
         consumoSemana.appendChild(consumo);
     });
-
-   
 }
 
-// Event listener para actualizar el menú al cambiar el día
+// Event listeners para actualizar el menú y manejar pedidos y pagos
 document.getElementById('dias').addEventListener('change', updateMenu);
 document.getElementById('realizar-pedido').addEventListener('click', function() {
     showTab(2);
 });
 document.getElementById('pagar').addEventListener('click', guardarCompra);
+
+// Inicializar el menú al cargar la página
+document.addEventListener('DOMContentLoaded', updateMenu);

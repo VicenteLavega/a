@@ -1,24 +1,27 @@
 // Clase PlatoPrincipal
 class PlatoPrincipal {
-    constructor(nombre, calorias) {
+    constructor(nombre, calorias, imagen) {
         this.nombre = nombre;
         this.calorias = calorias;
+        this.imagen = imagen;
     }
 }
 
-// Clase Acompañamiento
+// Clase Acompanamiento
 class Acompanamiento {
-    constructor(nombre, calorias) {
+    constructor(nombre, calorias, imagen) {
         this.nombre = nombre;
         this.calorias = calorias;
+        this.imagen = imagen;
     }
 }
 
 // Clase Postre
 class Postre {
-    constructor(nombre, calorias) {
+    constructor(nombre, calorias, imagen) {
         this.nombre = nombre;
         this.calorias = calorias;
+        this.imagen = imagen;
     }
 }
 

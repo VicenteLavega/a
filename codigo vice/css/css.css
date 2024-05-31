@@ -57,12 +57,11 @@ h1, h2 {
 }
 
 .menu-options img {
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 500px; /* Ajusta según sea necesario */
+    height: auto;
 }
+
 
 .menu-options img:hover {
     transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el cursor */
