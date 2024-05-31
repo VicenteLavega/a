@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación de Menús</title>
+    <title>Comedor Escolar</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/css.css">
     <script src="js/clases.js" defer></script>
@@ -11,7 +11,7 @@
 </head>
 <body class="bg-light">
     <header class="text-center my-4">
-        <h1>Bienvenidos!</h1>
+        <h1>Bienvenidos al Comedor Escolar</h1>
     </header>
     <nav class="nav justify-content-center bg-success shadow-sm mb-4">
         <ul class="nav">
@@ -21,7 +21,6 @@
             <li class="nav-item">
                 <button class="nav-link btn btn-success text-white" onclick="showTab(1)">Visualización de Menús</button>
             </li>
-            
             <li class="nav-item">
                 <button class="nav-link btn btn-success text-white" onclick="showTab(3)">Consumo</button>
             </li>
@@ -31,8 +30,16 @@
     <main class="container">
         <section id="tab-0" class="tab-content active text-center">
             <h2>Inicio</h2>
-            <button onclick="showTab(1)" class="btn btn-lg btn-success m-2">Menu</button>
-            <button onclick="showTab(3)" class="btn btn-lg btn-success m-2">Consumo</button>
+            <p>
+                ¡Bienvenidos al Comedor Escolar! Nos complace ofrecer una variedad de comidas nutritivas y deliciosas para nuestros estudiantes. Nuestro objetivo es proporcionar una alimentación balanceada que apoye el crecimiento y desarrollo saludable de cada niño.
+            </p>
+            <p>
+                En nuestro comedor, valoramos la calidad y la frescura de los ingredientes. Cada menú es cuidadosamente planificado por nuestros nutricionistas para asegurar que se cumplan las necesidades dietéticas diarias. Además, tenemos en cuenta las preferencias alimentarias y las restricciones dietéticas, ofreciendo opciones variadas cada día.
+            </p>
+            <p>
+                Explora nuestras opciones de menús y realiza tus pedidos de manera fácil y rápida. También puedes revisar el historial de consumo semanal para llevar un seguimiento de los hábitos alimenticios.
+            </p>
+            <img src="img/comedor_escolar.jpg" alt="Comedor Escolar" class="img-fluid my-3">
         </section>
 
         <section id="tab-1" class="tab-content">
@@ -143,7 +150,6 @@
                 <button onclick="showTab(0)" class="btn btn-secondary">Volver</button>
             </div>
         </section>
-        
     </main>
 </body>
 </html>
