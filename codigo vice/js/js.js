@@ -9,17 +9,7 @@ function showTab(tabIndex) {
     tabs[tabIndex].classList.add('active');
 }
 
-// Filtrar la visualización del consumo
-function filterConsumo() {
-    const filtro = document.getElementById('filtro').value;
-    const semana = document.getElementById('consumo-semana');
 
-    if (filtro === 'semana') {
-        semana.style.display = 'block';
-        // Asegúrate de definir la variable 'mes' si la usas
-        // mes.style.display = 'none';
-    }
-}
 
 // Menús disponibles por día
 const menus = {
@@ -93,7 +83,7 @@ function guardarCompra() {
 
     alert("Compra realizada con éxito!");
     mostrarConsumo();
-    showTab(3); // Ir a la sección de consumo
+    showTab(0); // Ir a la sección de consumo
 }
 
 // Mostrar el consumo
